@@ -274,11 +274,34 @@
                 </div>
                 <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
               </div>
-              <!--]--><!--[-->
+              <!--]--><!--[--> 
               <div
                 class="fullSection noBorder radius0 none c-section c-wrapper section-qtFIhp-4Ht"
                 id="section-qtFIhp-4Ht"
-              >
+              > <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.querySelector(".nav-menu-mobile");
+  const closeBtn = document.querySelector(".x-icon");
+  const menu = document.querySelector(".nav-menu-desktop");
+
+  if (menuBtn && closeBtn && menu) {
+    menuBtn.addEventListener("click", () => {
+      if (window.innerWidth <= 768) { // only on mobile
+        menu.classList.remove("hide-popup");
+        menu.classList.add("show-popup");
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      if (window.innerWidth <= 768) { // only on mobile
+        menu.classList.remove("show-popup");
+        menu.classList.add("hide-popup");
+      }
+    });
+  }
+});
+
+</script>
                 <!----><!---->
                 <div class="inner">
                   <!----><!--[--><!--[-->
@@ -9241,3 +9264,4 @@
     <script src="./assets/js/javascript.js"></script>
   </body>
 </html>
+
